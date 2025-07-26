@@ -1,0 +1,33 @@
+Benchmark 1: pdu --deduplicate-hardlinks tmp.sample
+  Time (mean ± σ):      88.3 ms ±   0.5 ms    [User: 61.2 ms, System: 280.0 ms]
+  Range (min … max):    87.4 ms …  89.4 ms    33 runs
+ 
+Benchmark 2: dust --no-progress tmp.sample
+  Time (mean ± σ):     111.0 ms ±   1.2 ms    [User: 75.6 ms, System: 305.0 ms]
+  Range (min … max):   108.6 ms … 114.3 ms    26 runs
+ 
+Benchmark 3: dua tmp.sample
+  Time (mean ± σ):     227.7 ms ±   4.8 ms    [User: 257.4 ms, System: 578.8 ms]
+  Range (min … max):   222.0 ms … 237.0 ms    13 runs
+ 
+Benchmark 4: ncdu -o /dev/stdout -0 tmp.sample
+  Time (mean ± σ):     210.0 ms ±   7.7 ms    [User: 32.0 ms, System: 177.8 ms]
+  Range (min … max):   204.6 ms … 232.3 ms    14 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet system without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+Benchmark 5: gdu --non-interactive --no-progress tmp.sample
+  Time (mean ± σ):     168.5 ms ±   3.5 ms    [User: 197.3 ms, System: 374.1 ms]
+  Range (min … max):   163.0 ms … 173.3 ms    17 runs
+ 
+Benchmark 6: du tmp.sample
+  Time (mean ± σ):     196.9 ms ±   0.5 ms    [User: 21.7 ms, System: 175.1 ms]
+  Range (min … max):   196.2 ms … 197.9 ms    15 runs
+ 
+Summary
+  pdu --deduplicate-hardlinks tmp.sample ran
+    1.26 ± 0.01 times faster than dust --no-progress tmp.sample
+    1.91 ± 0.04 times faster than gdu --non-interactive --no-progress tmp.sample
+    2.23 ± 0.01 times faster than du tmp.sample
+    2.38 ± 0.09 times faster than ncdu -o /dev/stdout -0 tmp.sample
+    2.58 ± 0.06 times faster than dua tmp.sample

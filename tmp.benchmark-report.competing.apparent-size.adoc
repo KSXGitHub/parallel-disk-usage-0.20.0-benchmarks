@@ -1,0 +1,44 @@
+[cols="<,>,>,>,>"]
+|===
+| Command 
+| Mean [ms] 
+| Min [ms] 
+| Max [ms] 
+| Relative 
+
+| `pdu --quantity=apparent-size tmp.sample` 
+| 88.7 ± 2.1 
+| 86.6 
+| 98.2 
+| 1.00 
+
+| `dust --no-progress --apparent-size tmp.sample` 
+| 113.7 ± 15.7 
+| 101.9 
+| 156.8 
+| 1.28 ± 0.18 
+
+| `dua --count-hard-links --apparent-size tmp.sample` 
+| 267.8 ± 7.6 
+| 258.6 
+| 282.5 
+| 3.02 ± 0.11 
+
+| `ncdu -o /dev/stdout -0 tmp.sample` 
+| 211.1 ± 8.6 
+| 204.3 
+| 232.2 
+| 2.38 ± 0.11 
+
+| `gdu --show-apparent-size --non-interactive --no-progress tmp.sample` 
+| 168.2 ± 2.5 
+| 163.7 
+| 172.9 
+| 1.90 ± 0.05 
+
+| `du --count-links --apparent-size tmp.sample` 
+| 197.3 ± 2.0 
+| 195.3 
+| 203.9 
+| 2.22 ± 0.06 
+|===

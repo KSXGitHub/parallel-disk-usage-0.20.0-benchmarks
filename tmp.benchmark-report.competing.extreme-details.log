@@ -1,0 +1,21 @@
+Benchmark 1: pdu --min-ratio=0 tmp.sample
+  Time (mean ± σ):     342.1 ms ±   4.4 ms    [User: 265.1 ms, System: 329.0 ms]
+  Range (min … max):   336.4 ms … 349.7 ms    10 runs
+ 
+Benchmark 2: dutree tmp.sample
+  Time (mean ± σ):      3.993 s ±  0.013 s    [User: 0.507 s, System: 3.486 s]
+  Range (min … max):    3.965 s …  4.011 s    10 runs
+ 
+Benchmark 3: ncdu -o /dev/stdout -0 tmp.sample
+  Time (mean ± σ):     204.6 ms ±   0.4 ms    [User: 33.7 ms, System: 171.0 ms]
+  Range (min … max):   204.0 ms … 205.3 ms    14 runs
+ 
+Benchmark 4: du --count-links --apparent-size tmp.sample
+  Time (mean ± σ):     195.0 ms ±   0.7 ms    [User: 21.8 ms, System: 173.1 ms]
+  Range (min … max):   193.7 ms … 196.1 ms    15 runs
+ 
+Summary
+  du --count-links --apparent-size tmp.sample ran
+    1.05 ± 0.00 times faster than ncdu -o /dev/stdout -0 tmp.sample
+    1.75 ± 0.02 times faster than pdu --min-ratio=0 tmp.sample
+   20.48 ± 0.10 times faster than dutree tmp.sample

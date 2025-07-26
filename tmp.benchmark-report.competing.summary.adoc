@@ -1,0 +1,32 @@
+[cols="<,>,>,>,>"]
+|===
+| Command 
+| Mean [ms] 
+| Min [ms] 
+| Max [ms] 
+| Relative 
+
+| `pdu --max-depth=1 tmp.sample` 
+| 83.2 ± 0.5 
+| 82.2 
+| 84.4 
+| 1.00 
+
+| `dutree --summary tmp.sample` 
+| 377.1 ± 1.3 
+| 375.3 
+| 379.6 
+| 4.53 ± 0.03 
+
+| `dua --count-hard-links tmp.sample` 
+| 231.0 ± 7.0 
+| 218.9 
+| 243.0 
+| 2.77 ± 0.09 
+
+| `du --count-links --summarize tmp.sample` 
+| 193.1 ± 0.8 
+| 192.2 
+| 195.3 
+| 2.32 ± 0.02 
+|===

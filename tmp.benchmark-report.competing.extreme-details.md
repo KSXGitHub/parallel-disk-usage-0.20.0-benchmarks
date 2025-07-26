@@ -1,0 +1,6 @@
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `pdu --min-ratio=0 tmp.sample` | 342.1 ± 4.4 | 336.4 | 349.7 | 1.75 ± 0.02 |
+| `dutree tmp.sample` | 3993.0 ± 12.6 | 3965.2 | 4010.8 | 20.48 ± 0.10 |
+| `ncdu -o /dev/stdout -0 tmp.sample` | 204.6 ± 0.4 | 204.0 | 205.3 | 1.05 ± 0.00 |
+| `du --count-links --apparent-size tmp.sample` | 195.0 ± 0.7 | 193.7 | 196.1 | 1.00 |

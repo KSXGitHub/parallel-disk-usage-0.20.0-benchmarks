@@ -1,0 +1,8 @@
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `pdu --deduplicate-hardlinks tmp.sample` | 88.3 ± 0.5 | 87.4 | 89.4 | 1.00 |
+| `dust --no-progress tmp.sample` | 111.0 ± 1.2 | 108.6 | 114.3 | 1.26 ± 0.01 |
+| `dua tmp.sample` | 227.7 ± 4.8 | 222.0 | 237.0 | 2.58 ± 0.06 |
+| `ncdu -o /dev/stdout -0 tmp.sample` | 210.0 ± 7.7 | 204.6 | 232.3 | 2.38 ± 0.09 |
+| `gdu --non-interactive --no-progress tmp.sample` | 168.5 ± 3.5 | 163.0 | 173.3 | 1.91 ± 0.04 |
+| `du tmp.sample` | 196.9 ± 0.5 | 196.2 | 197.9 | 2.23 ± 0.01 |

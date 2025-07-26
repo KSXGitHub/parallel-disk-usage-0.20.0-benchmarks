@@ -1,0 +1,26 @@
+Benchmark 1: pdu --no-sort --max-depth=1 tmp.sample
+  Time (mean ± σ):      82.7 ms ±   0.7 ms    [User: 52.1 ms, System: 271.7 ms]
+  Range (min … max):    81.5 ms …  84.2 ms    35 runs
+ 
+Benchmark 2: dua --count-hard-links tmp.sample
+  Time (mean ± σ):     231.8 ms ±   5.6 ms    [User: 249.0 ms, System: 596.7 ms]
+  Range (min … max):   223.1 ms … 244.7 ms    13 runs
+ 
+Benchmark 3: ncdu -o /dev/null -0 tmp.sample
+  Time (mean ± σ):     205.4 ms ±   0.6 ms    [User: 33.1 ms, System: 172.2 ms]
+  Range (min … max):   204.2 ms … 206.4 ms    14 runs
+ 
+Benchmark 4: gdu --non-interactive --no-progress tmp.sample
+  Time (mean ± σ):     168.8 ms ±   3.9 ms    [User: 198.8 ms, System: 371.8 ms]
+  Range (min … max):   163.7 ms … 177.0 ms    18 runs
+ 
+Benchmark 5: du --count-links --summarize tmp.sample
+  Time (mean ± σ):     192.9 ms ±   0.5 ms    [User: 21.5 ms, System: 171.4 ms]
+  Range (min … max):   192.2 ms … 193.8 ms    15 runs
+ 
+Summary
+  pdu --no-sort --max-depth=1 tmp.sample ran
+    2.04 ± 0.05 times faster than gdu --non-interactive --no-progress tmp.sample
+    2.33 ± 0.02 times faster than du --count-links --summarize tmp.sample
+    2.48 ± 0.02 times faster than ncdu -o /dev/null -0 tmp.sample
+    2.80 ± 0.07 times faster than dua --count-hard-links tmp.sample
